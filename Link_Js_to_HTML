@@ -1,0 +1,134 @@
+<script src="scripts.js"></script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>My Portfolio Website</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#technologies-used">Technologies Used</a></li>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#usage">Usage</a></li>
+                    <li><a href="#contributing">Contributing</a></li>
+                    <li><a href="#license">License</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container">
+        <div id="introduction" class="content">
+            <h2>Introduction</h2>
+            <p>This portfolio website is a comprehensive showcase of my skills and projects as a web developer. It includes a collection of my work, including web applications, design projects, and other relevant content. The goal of this website is to provide potential employers, clients, and collaborators with a clear understanding of my abilities and achievements.</p>
+        </div>
+
+        <div id="features" class="content">
+            <h2>Features</h2>
+            <ul>
+                <li><strong>Home:</strong> A brief introduction and overview of who I am.</li>
+                <li><strong>About:</strong> Detailed information about my background, skills, and experience.</li>
+                <li><strong>Projects:</strong> A showcase of my projects with descriptions, images, and links to live demos and source code.</li>
+                <li><strong>Blog:</strong> Articles and posts about my experiences, tutorials, and insights into web development.</li>
+                <li><strong>Contact:</strong> A form for visitors to get in touch with me.</li>
+            </ul>
+        </div>
+
+        <div id="technologies-used" class="content">
+            <h2>Technologies Used</h2>
+            <ul>
+                <li><strong>Frontend:</strong>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>JavaScript</li>
+                        <li>React.js (or your chosen framework/library)</li>
+                    </ul>
+                </li>
+                <li><strong>Backend:</strong>
+                    <ul>
+                        <li>Node.js (or your chosen backend technology)</li>
+                        <li>Express.js (if applicable)</li>
+                    </ul>
+                </li>
+                <li><strong>Other:</strong>
+                    <ul>
+                        <li>Git & GitHub for version control</li>
+                        <li>Netlify (or your chosen hosting service) for deployment</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="installation" class="content">
+            <h2>Installation</h2>
+            <p>To run this project locally, follow these steps:</p>
+            <ol>
+                <li><strong>Clone the repository:</strong></li>
+                <pre><code>git clone https://github.com/yourusername/portfolio-website.git</code></pre>
+                <li><strong>Navigate to the project directory:</strong></li>
+                <pre><code>cd portfolio-website</code></pre>
+                <li><strong>Install dependencies:</strong></li>
+                <pre><code>npm install</code></pre>
+                <li><strong>Run the development server:</strong></li>
+                <pre><code>npm start</code></pre>
+            </ol>
+        </div>
+
+        <div id="usage" class="content">
+            <h2>Usage</h2>
+            <p>Open your web browser and go to <code>http://localhost:3000</code> to view the portfolio website. Navigate through the various sections to explore my work and learn more about me.</p>
+        </div>
+
+        <div id="contributing" class="content">
+            <h2>Contributing</h2>
+            <p>Contributions are welcome! If you have any suggestions or improvements, please feel free to submit a pull request. Follow these steps:</p>
+            <ol>
+                <li><strong>Fork the repository:</strong></li>
+                <li><strong>Create a new branch:</strong></li>
+                <pre><code>git checkout -b feature/your-feature-name</code></pre>
+                <li><strong>Make your changes:</strong></li>
+                <li><strong>Commit your changes:</strong></li>
+                <pre><code>git commit -m 'Add your commit message'</code></pre>
+                <li><strong>Push to the branch:</strong></li>
+                <pre><code>git push origin feature/your-feature-name</code></pre>
+                <li><strong>Open a pull request:</strong></li>
+            </ol>
+        </div>
+
+        <div id="license" class="content">
+            <h2>License</h2>
+            <p>This project is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for details.</p>
+        </div>
+
+        <div id="contact" class="content">
+            <h2>Contact</h2>
+            <p>If you have any questions or want to get in touch, feel free to contact me:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-profile">Your LinkedIn Profile</a></li>
+                <li><strong>Twitter:</strong> <a href="https://twitter.com/yourusername">@yourusername</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
