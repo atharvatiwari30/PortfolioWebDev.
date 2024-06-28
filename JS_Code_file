@@ -1,0 +1,56 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Form validation example
+    const contactForm = document.querySelector('#contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let isValid = true;
+            const emailInput = document.querySelector('#email');
+            const messageInput = document.querySelector('#message');
+
+            if (!emailInput.value || !validateEmail(emailInput.value)) {
+                isValid = false;
+                emailInput.classList.add('error');
+            } else {
+                emailInput.classList.remove('error');
+            }
+
+            if (!messageInput.value) {
+                isValid = false;
+                messageInput.classList.add('error');
+            } else {
+                messageInput.classList.remove('error');
+            }
+
+            if (isValid) {
+                alert('Form submitted successfully!');
+                contactForm.reset();
+            } else {
+                alert('Please fill out all fields correctly.');
+            }
+        });
+    }
+
+    // Email validation function
+    function validateEmail(email) {
+        const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    // Dynamic content update example
+    const projectDescriptions = document.querySelectorAll('.project-description');
+    projectDescriptions.forEach((desc, index) => {
+        desc.innerText = `Project ${index + 1}: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`;
+    });
+});
