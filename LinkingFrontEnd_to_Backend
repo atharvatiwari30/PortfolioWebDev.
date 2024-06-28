@@ -1,0 +1,105 @@
+npm init -y
+npm install express body-parser cors
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+const app = express();
+const port = process.env.PORT || 5000;
+
+app.use(bodyParser.json());
+app.use(cors());
+
+// Endpoint to handle contact form submissions
+app.post('/api/contact', (req, res) => {
+    const { email, message } = req.body;
+    console.log(`Received message from ${email}: ${message}`);
+
+    // Here you can add code to handle the message, such as sending an email
+    
+    res.status(200).send({ message: 'Form submitted successfully!' });
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
+
+node server.js
+
+<div id="contact" class="content">
+    <h2>Contact</h2>
+    <p>If you have any questions or want to get in touch, feel free to contact me:</p>
+    <form id="contactForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Form validation and submission
+    const contactForm = document.querySelector('#contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const emailInput = document.querySelector('#email');
+            const messageInput = document.querySelector('#message');
+
+            const email = emailInput.value;
+            const message = messageInput.value;
+
+            if (validateEmail(email) && message) {
+                submitForm(email, message);
+            } else {
+                alert('Please fill out all fields correctly.');
+            }
+        });
+    }
+
+    // Email validation function
+    function validateEmail(email) {
+        const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    // Function to submit form data to the backend
+    function submitForm(email, message) {
+        fetch('http://localhost:5000/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, message })
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            contactForm.reset();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error submitting the form. Please try again.');
+        });
+    }
+
+    // Dynamic content update example
+    const projectDescriptions = document.querySelectorAll('.project-description');
+    projectDescriptions.forEach((desc, index) => {
+        desc.innerText = `Project ${index + 1}: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`;
+    });
+});
+
